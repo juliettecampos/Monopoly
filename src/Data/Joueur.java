@@ -15,7 +15,7 @@ public class Joueur {
 	}
 
 	public String getNom() {
-		throw new UnsupportedOperationException();
+		return this.nomJoueur;
 	}
 
 	public int getCash() {
