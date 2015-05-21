@@ -5,14 +5,14 @@ public class ProprieteAConstruire extends CarreauPropriete {
 	private int nbMaisons = 0;
 	private int nbHotels = 0;
 	private ArrayList<Integer> loyerMaison;
-	private int prixMaison;
-	private Groupe groupePropriete;
+
         private int loyer;
-    public ProprieteAConstruire(int numero, String nomCarreau, Monopoly monopoly, int _prixAchat, int _prix, Groupe _groupe, ArrayList<Integer> _loyerMaison,int _prixMaison) {
-        super(numero, nomCarreau, monopoly, _prixAchat, _prix);
-       this.setGroupePropriete(_groupe);
+        private CouleurPropriete couleur;
+        
+    public ProprieteAConstruire(Integer numero, String nomCarreau, Monopoly monopoly, Integer _prixAchat, ArrayList<Integer> _loyerMaison, CouleurPropriete _couleur) {
+        super(numero, nomCarreau, monopoly, _prixAchat);
        this.setLoyerMaison(_loyerMaison);
-       this.setPrixMaison(_prixMaison);
+    
     }
 
 	public int getLoyer() {
@@ -73,29 +73,9 @@ public class ProprieteAConstruire extends CarreauPropriete {
 
     /**
      * @return the prixMaison
-     */
-    public int getPrixMaison() {
-        return prixMaison;
-    }
-
-    /**
-     * @param prixMaison the prixMaison to set
-     */
-    public void setPrixMaison(int prixMaison) {
-        this.prixMaison = prixMaison;
-    }
+   
 
     /**
      * @return the groupePropriete
      */
-    public Groupe getGroupePropriete() {
-        return groupePropriete;
-    }
-
-    /**
-     * @param groupePropriete the groupePropriete to set
-     */
-    public void setGroupePropriete(Groupe groupePropriete) {
-        this.groupePropriete = groupePropriete;
-    }
 }

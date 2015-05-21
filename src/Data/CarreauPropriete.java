@@ -1,23 +1,15 @@
 package Data;
 public abstract class CarreauPropriete extends Carreau {
-	private int loyerBase;
-	private int prixAchat;
+	private Integer loyerBase;
+	private Integer prixAchat;
 	private String nom;
-	
-	private int prix;
 	private Joueur proprietaire;
 
-    public CarreauPropriete(int numero, String nomCarreau, Monopoly monopoly, int _prixAchat, int _prix) {
+    public CarreauPropriete(Integer numero, String nomCarreau, Monopoly monopoly, Integer _prixAchat) {
         super(numero, nomCarreau, monopoly);
         this.loyerBase=0;
-        this.setPrixAchat(_prixAchat);
-        this.setPrix(_prix);   
-        
+        this.setPrixAchat(_prixAchat);        
     }
-
-	public int getPrix() {
-		return this.prix;
-	}
 
 	public String getNom() {
 		return this.nom;
@@ -68,9 +60,6 @@ public abstract class CarreauPropriete extends Carreau {
     /**
      * @param prix the prix to set
      */
-    public void setPrix(int prix) {
-        this.prix = prix;
-    }
 
     /**
      * @return the proprietaire

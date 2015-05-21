@@ -49,13 +49,19 @@ public class Monopoly {
 				String caseType = data.get(i)[0];
 				if(caseType.compareTo("P") == 0){
 					//System.out.println("Propriété :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1] +data.get(i)[3])+data.get(i)[3];
-                                        ProprieteAConstruire p=new ProprieteAConstruire(Integer.getInteger(data.get(i)[1]), data.get(i)[2], this, Integer.getInteger(data.get(i)[4]),(Integer.getInteger(data.get(i)[5]),Integer.getInteger(data.get(i)[6]),Integer.getInteger(data.get(i)[7]),Integer.getInteger(data.get(i)[8]),Integer.getInteger(data.get(i)[9]),Integer.getInteger(data.get(i)[10]), Integer.getInteger(data.get(i)[11])) );
-				}
+                                        ArrayList<Integer> l = new ArrayList();
+                                        for (int j = 5; j <= 10; j++){
+                                            l.add(Integer.parseInt(data.get(i)[j]));
+                                        }
+                                        ProprieteAConstruire p=new ProprieteAConstruire(i, data.get(i)[2], this, Integer.parseInt(data.get(i)[4]), l, CouleurPropriete.valueOf(data.get(i)[3]));
+                                }
 				else if(caseType.compareTo("G") == 0){
-					System.out.println("Gare :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
+					//System.out.println("Gare :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
+                                        Gare g =new Gare(i, data.get(i)[2], this, Integer.parseInt(data.get(i)[3]));
 				}
 				else if(caseType.compareTo("C") == 0){
-					System.out.println("Compagnie :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
+					//System.out.println("Compagnie :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
+                                        Compagnie c =new Compagnie(i, data.get(i)[2], this, Integer.parseInt(data.get(i)[3]));
 				}
 				else if(caseType.compareTo("CT") == 0){
 					System.out.println("Case Tirage :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);

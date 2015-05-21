@@ -1,12 +1,10 @@
 package Data;
 public class Gare extends CarreauPropriete {
     private int loyer;
-    public Gare(int numero, String nomCarreau, Monopoly monopoly, int _loyerBase, int _prixAchat, int _prix, int _loyer) {
-        super(numero, nomCarreau, monopoly , _prixAchat,_prix);
-        this.setLoyerBase(_loyerBase);
+    public Gare(int numero, String nomCarreau, Monopoly monopoly, int _prixAchat) {
+        super(numero, nomCarreau, monopoly , _prixAchat);
+        this.setLoyerBase(25);
         this.setPrixAchat(_prixAchat);
-        this.setLoyer(_loyer);
-        this.setPrix(_prix);
     }
 
     public int getLoyer() {
