@@ -37,4 +37,8 @@ public class Joueur {
 	public int calculArgentRestant() {
 		throw new UnsupportedOperationException();
 	}
+
+        public void setNom(String str) {
+            nomJoueur=str;
+        }
 }
