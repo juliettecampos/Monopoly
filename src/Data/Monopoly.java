@@ -16,6 +16,7 @@ public class Monopoly {
 	private ArrayList<Joueur> joueurs = new ArrayList<Joueur>();
 	public Interface interface_3;
         private static final Random RANDOM = new Random();
+        private Joueur joueurCourant;
 
         public ArrayList<Carreau> getCarreaux() {
             return carreaux;
@@ -130,11 +131,13 @@ public class Monopoly {
         
         public void lancerDesEtAvancer(){
             int val1 = lancerDes();
-            int val2 = lancerDes();
+            int val2 = lancerDes();            
             System.out.println("Valeur dès 1 : "+ val1 );
             System.out.println("Valeur dès 2 : "+ val2 );
             int val = val1 + val2;
             System.out.println("Valeur dès : "+ val );
+            
+            
             
         }
         

@@ -74,7 +74,6 @@ public class Main {
                 j4.setNom(str4);    
             }
             
-            
 
           
           
