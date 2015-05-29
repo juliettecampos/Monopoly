@@ -17,13 +17,25 @@ public class Monopoly {
 	public Interface interface_3;
         private static final Random RANDOM = new Random();
 
+        public ArrayList<Carreau> getCarreaux() {
+            return carreaux;
+        }
+
+        public void setCarreaux(ArrayList<Carreau> carreaux) {
+            this.carreaux = carreaux;
+        }
+
+        public ArrayList<Joueur> getJoueurs() {
+            return joueurs;
+        }
+
+        public void setJoueurs(ArrayList<Joueur> joueurs) {
+            this.joueurs = joueurs;
+        }
+
         public int lancerDes() {
-            int somme = 0;
-            for (int i = 0; i < RANDOM.nextInt(6)+1; i++) {
-                somme = somme + lancerDes();
-            }
-            return somme;
-	}
+            return RANDOM.nextInt(6)+1; 
+      	}
 
 	public void achatPropriete() {
 		throw new UnsupportedOperationException();
@@ -115,5 +127,19 @@ public class Monopoly {
 		
 		return data;
 	}
+        
+        public void lancerDesEtAvancer(){
+            int val1 = lancerDes();
+            int val2 = lancerDes();
+            System.out.println("Valeur dès 1 : "+ val1 );
+            System.out.println("Valeur dès 2 : "+ val2 );
+            int val = val1 + val2;
+            System.out.println("Valeur dès : "+ val );
+            
+        }
+        
+        public void jouerUnCoup(Joueur j) {
+            
+        }
 }
 

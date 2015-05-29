@@ -7,10 +7,9 @@ import java.util.Scanner;
 public class Main {
                 
 
-        @SuppressWarnings("empty-statement")
+        
 	public static void main(String[] args) {
 		Monopoly m = new Monopoly("/users/info/pub/1a/M2104/data.txt");  
-
         Joueur j1 = new Joueur();
         Joueur j2 = new Joueur();
         Joueur j3 = new Joueur();

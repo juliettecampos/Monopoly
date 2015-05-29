@@ -11,7 +11,18 @@ public class Joueur {
 	private ArrayList<ProprieteAConstruire> proprietesAConstruire = new ArrayList<ProprieteAConstruire>();
 
 	public void setPositionCourante(int _val) {
-		throw new UnsupportedOperationException();
+            int num;
+            if ((num = positionCourante.getNumero() + _val) > 40){
+                num = (positionCourante.getNumero() + _val) -40;
+            } else {
+                num = positionCourante.getNumero() + _val;
+            }
+            
+            for (Carreau c : monopoly.getCarreaux()){
+                if (c.getNumero() == num) {
+                    positionCourante = c;
+                }
+            }
 	}
 
 	public String getNom() {
