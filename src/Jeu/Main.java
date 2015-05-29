@@ -9,17 +9,19 @@ public class Main {
 
         
 	public static void main(String[] args) {
-		Monopoly m = new Monopoly("/users/info/pub/1a/M2104/data.txt");  
+	Monopoly m = new Monopoly("src/Data/data.txt");  
+        /*
         Joueur j1 = new Joueur();
         Joueur j2 = new Joueur();
         Joueur j3 = new Joueur();
         Joueur j4 = new Joueur();
+        */
         
         System.out.println("Combien de joueurs ?");
         Scanner nbj = new Scanner(System.in);
         int i=nbj.nextInt();
         
-           
+            
             if( i == 1 ) {
                 Scanner sc = new Scanner(System.in);
 
@@ -31,27 +33,25 @@ public class Main {
 
                 System.out.println("Veuillez saisir un nom pour le joueur 1 :");
                 String str1= sc.nextLine();
-                j1.setNom(str1);
+                Joueur j1 = new Joueur(str1, m.lancerDes()+m.lancerDes());
                 
                 System.out.println("Veuillez saisir un nom pour le joueur 2 :");
                 String str2= sc.nextLine();
-                j2.setNom(str2);           
-            }
+                Joueur j2 = new Joueur(str2, m.lancerDes()+m.lancerDes());            }
         
             else if( i == 3 ) {
                 Scanner sc = new Scanner(System.in);
 
                 System.out.println("Veuillez saisir un nom pour le joueur 1 :");
                 String str1= sc.nextLine();
-                j1.setNom(str1);
-                
+                Joueur j1 = new Joueur(str1, m.lancerDes()+m.lancerDes());                
                 System.out.println("Veuillez saisir un nom pour le joueur 2 :");
                 String str2= sc.nextLine();
-                j2.setNom(str2);   
+                Joueur j2 = new Joueur(str2, m.lancerDes()+m.lancerDes()); 
                 
                 System.out.println("Veuillez saisir un nom pour le joueur 3 :");
                 String str3= sc.nextLine();
-                j3.setNom(str3);            
+                Joueur j3 = new Joueur(str3, m.lancerDes()+m.lancerDes());          
             }
             
             else if( i == 4 ) {
@@ -59,22 +59,22 @@ public class Main {
 
                 System.out.println("Veuillez saisir un nom pour le joueur 1 :");
                 String str1= sc.nextLine();
-                j1.setNom(str1);
+                Joueur j1 = new Joueur(str1, m.lancerDes()+m.lancerDes());                
                 
                 System.out.println("Veuillez saisir un nom pour le joueur 2 :");
                 String str2= sc.nextLine();
-                j2.setNom(str2);   
+                Joueur j2 = new Joueur(str2, m.lancerDes()+m.lancerDes());                
                 
                 System.out.println("Veuillez saisir un nom pour le joueur 3 :");
                 String str3= sc.nextLine();
-                j3.setNom(str3);
+                Joueur j3 = new Joueur(str3, m.lancerDes()+m.lancerDes());                
                 
                 System.out.println("Veuillez saisir un nom pour le joueur 4 :");
                 String str4= sc.nextLine();
-                j4.setNom(str4);    
+                Joueur j4 = new Joueur(str4, m.lancerDes()+m.lancerDes());                
             }
             
-
+            
           
           
           

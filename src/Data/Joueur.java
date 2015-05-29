@@ -9,6 +9,12 @@ public class Joueur {
 	private ArrayList<Gare> gares = new ArrayList<Gare>();
 	private Carreau positionCourante;
 	private ArrayList<ProprieteAConstruire> proprietesAConstruire = new ArrayList<ProprieteAConstruire>();
+        private int LancerDepart;
+
+    public Joueur(String str, int i) {
+        setNom(str);
+        LancerDepart=i;
+    }
 
 	public void setPositionCourante(int _val) {
             int num;
@@ -51,5 +57,8 @@ public class Joueur {
 
         public void setNom(String str) {
             nomJoueur=str;
+        }
+        public int getLancerDepart()    {
+            return LancerDepart;
         }
 }
