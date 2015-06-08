@@ -14,6 +14,7 @@ public class Joueur {
     public Joueur(String str, int i) {
         setNom(str);
         LancerDepart=i;
+        positionCourante.setNumero(1);
     }
 
 	public void setPositionCourante(int _val) {
@@ -31,6 +32,37 @@ public class Joueur {
             }
 	}
 
+        public Carreau getPositionCourante() {
+            return positionCourante;
+        }
+
+        public ArrayList<Compagnie> getCompagnies() {
+            return compagnies;
+        }
+
+        public void setCompagnies(ArrayList<Compagnie> compagnies) {
+            this.compagnies = compagnies;
+        }
+
+        public ArrayList<Gare> getGares() {
+            return gares;
+        }
+
+        public void setGares(ArrayList<Gare> gares) {
+            this.gares = gares;
+        }
+
+        public ArrayList<ProprieteAConstruire> getProprietesAConstruire() {
+            return proprietesAConstruire;
+        }
+
+        public void setProprietesAConstruire(ArrayList<ProprieteAConstruire> proprietesAConstruire) {
+            this.proprietesAConstruire = proprietesAConstruire;
+        }
+        
+        
+        
+
 	public String getNom() {
 		return this.nomJoueur;
 	}
@@ -39,8 +71,9 @@ public class Joueur {
 		return this.cash;
 	}
 
-	public void getNombreGare() {
-		throw new UnsupportedOperationException();
+	public int getNombreGare() {
+                return gares.size();
+	
 	}
 
 	public void setCash() {
