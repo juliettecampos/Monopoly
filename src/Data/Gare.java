@@ -29,10 +29,11 @@ public class Gare extends CarreauPropriete {
 	}
 
 	public int getPrix() {
-		throw new UnsupportedOperationException();
+	 
+               throw new UnsupportedOperationException();         
 	}
 
 	public String getNom() {
-		throw new UnsupportedOperationException();
+		return nomCarreau;
 	}
 }

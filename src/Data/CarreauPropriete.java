@@ -2,7 +2,6 @@ package Data;
 public abstract class CarreauPropriete extends Carreau {
 	private Integer loyerBase;
 	private Integer prixAchat;
-	private String nom;
 	private Joueur proprietaire;
 
     public CarreauPropriete(Integer numero, String nomCarreau, Monopoly monopoly, Integer _prixAchat) {
@@ -10,10 +9,6 @@ public abstract class CarreauPropriete extends Carreau {
         this.loyerBase=0;
         this.setPrixAchat(_prixAchat);        
     }
-
-	public String getNom() {
-		return this.nom;
-	}
 
 	public void achatPropriete() {
 		throw new UnsupportedOperationException();
@@ -50,9 +45,6 @@ public abstract class CarreauPropriete extends Carreau {
     /**
      * @param nom the nom to set
      */
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
 
     /**
      * @return the loyer

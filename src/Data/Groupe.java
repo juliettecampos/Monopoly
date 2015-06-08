@@ -7,16 +7,17 @@ public class Groupe {
 	private CouleurPropriete couleur;
 	private ArrayList<ProprieteAConstruire> proprietes = new ArrayList<ProprieteAConstruire>();
 
-    public Groupe(int prixAchatMaison, int prixAchatHotel, CouleurPropriete couleur, ArrayList<ProprieteAConstruire> _proprietes) {
+    public Groupe(int prixAchatMaison, int prixAchatHotel, CouleurPropriete couleur) {
         this.prixAchatMaison = prixAchatMaison;
         this.prixAchatHotel = prixAchatHotel;
         this.couleur = couleur;
-        this.setProprietes(_proprietes);
     }
         
         
         
-        
+    public CouleurPropriete getCouleur(){
+       return couleur;
+    }    
 
     public int getPrixAchatMaison() {
         return prixAchatMaison;
@@ -26,9 +27,6 @@ public class Groupe {
         return prixAchatHotel;
     }
 
-    public CouleurPropriete getCouleur() {
-        return couleur;
-    }
 
     public ArrayList<ProprieteAConstruire> getProprietes() {
         return proprietes;
@@ -50,5 +48,8 @@ public class Groupe {
         this.proprietes = proprietes;
     }
         
+    public void ajouterPropriete(ProprieteAConstruire p){
+        proprietes.add(p);
+    }
         
 }

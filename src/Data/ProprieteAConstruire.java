@@ -7,17 +7,19 @@ public class ProprieteAConstruire extends CarreauPropriete {
 	private ArrayList<Integer> loyerMaison;
 
         private int loyer;
-        private CouleurPropriete couleur;
+        private Groupe groupe;
         
-    public ProprieteAConstruire(Integer numero, String nomCarreau, Monopoly monopoly, Integer _prixAchat, ArrayList<Integer> _loyerMaison, CouleurPropriete _couleur) {
+    public ProprieteAConstruire(Integer numero, String nomCarreau, Monopoly monopoly, Integer _prixAchat, ArrayList<Integer> _loyerMaison, Groupe _groupe) {
         super(numero, nomCarreau, monopoly, _prixAchat);
-       this.setLoyerMaison(_loyerMaison);
-    
+        this.setLoyerMaison(_loyerMaison);
+        
     }
 
 	public int getLoyer() {
         return loyer;
 	}
+        
+    
 
     // public ProprieteAConstruire(String ligne) {
     //}
@@ -26,7 +28,7 @@ public class ProprieteAConstruire extends CarreauPropriete {
     }
 
     public Groupe getGroupe() {
-        throw new UnsupportedOperationException();
+        return groupe;
     }
 
     /**

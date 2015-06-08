@@ -2,7 +2,7 @@ package Data;
 
 public abstract class Carreau {
 	private Integer numero;
-	private String nomCarreau;
+	String nomCarreau;
 	private Monopoly monopoly;
 
     public Carreau(Integer numero, String nomCarreau, Monopoly monopoly) {
@@ -14,7 +14,7 @@ public abstract class Carreau {
         
         
     public String getNom() {
-            throw new UnsupportedOperationException();
+           return nomCarreau;
     }
 
     /**
