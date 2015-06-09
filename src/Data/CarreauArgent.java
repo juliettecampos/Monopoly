@@ -19,4 +19,10 @@ public class CarreauArgent extends CarreauAction {
     public void setMontant(int montant) {
         this.montant = montant;
     }
+
+    @Override
+    public void action(Joueur j) {
+        throw new UnsupportedOperationException("Not supported yet."); 
+    }
+
 }

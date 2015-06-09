@@ -26,10 +26,15 @@ public class Gare extends CarreauPropriete {
     }
 
     @Override
+    
     public void action(Joueur j){
+ //       this.getMonopoly().setJoueurCourant(j);                //erreur quand on tombe sur une gare
         Joueur jProprio = this.getProprietaire();
         if (jProprio == null){
             this.achatPropriete();
+        }
+        else{
+            this.calculLoyerGare();
         }
     }
     

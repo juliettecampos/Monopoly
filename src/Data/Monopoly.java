@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.Random;
 import static javax.swing.UIManager.get;
 
+
 public class Monopoly {
 	
         private int nbMaisons = 32;
@@ -151,6 +152,7 @@ public class Monopoly {
        
         
         public void jouerUnCoup(Joueur j) {
+           
             int i = 1;
             if (lancerDesEtAvancer()) {
                 while (i <= 2){         //tant que le joueur fait des doubles et qu il en a fait moins de 3 il rejoue.
@@ -164,11 +166,13 @@ public class Monopoly {
                 this.getInterface_3().allerEnPrisonDouble(j);
                 j.allerEnPrison();        //au bout de 3 double le joueur courant va en prison (case 11).
             }
-            System.out.println();
-            //j.getPositionCourante().action(j);
-            
+           
+            j.getPositionCourante().action(j);
+             this.setJoueurCourant(j);
             
         }
+        
+        
         
          public boolean lancerDesEtAvancer(){                           
             int val1 = 2;//lancerDes();
@@ -201,6 +205,8 @@ public class Monopoly {
         }
         
         public void initialisePartie(){
+            
+            
             setJoueurs(interface_3.creerJoueurs(interface_3.nombreJoueurs()));
             int i = 0;
             for (Joueur j : joueurs){
@@ -231,6 +237,8 @@ public class Monopoly {
             }
         }
 
+        
+        
         public void setJoueurCourant(Joueur joueurCourant) {
             this.joueurCourant = joueurCourant;
         }
@@ -240,6 +248,7 @@ public class Monopoly {
         }
         
         public Joueur joueurSuivant(){
+            
             if (this.getJoueurs().indexOf(this.getJoueurCourant()) == this.getJoueurs().size()-1){
                 return this.getJoueurs().get(0);
             }else {
@@ -252,6 +261,7 @@ public class Monopoly {
                 this.getJoueurs().remove(j);
             }
         }
+        
         
         
 }

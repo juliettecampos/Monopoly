@@ -17,7 +17,7 @@ public class Main {
         m.getInterface_3().afficherPlateau(m);
         
         m.initialisePartie();   
-        
+            
         m.getInterface_3().attendreClic();
         
         while (m.getJoueurs() != null){

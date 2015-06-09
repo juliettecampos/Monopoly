@@ -11,11 +11,12 @@ public abstract class CarreauPropriete extends Carreau {
     }
 
     public void achatPropriete() {
-//        this.getMonopoly().getJoueurCourant().getCash();
-            this.getMonopoly().getJoueurCourant().getCash();
-//            if (cash > this.getPrixAchat()){
-//                this.getMonopoly().getInterface_3().infoGare(this.getNomCarreau(), this.getPrixAchat());
-//            }
+
+            int cash = this.getMonopoly().getJoueurCourant().getCash();
+            if (cash > this.getPrixAchat()){
+                this.getMonopoly().getInterface_3().infoGare(this.getNomCarreau(), this.getPrixAchat());
+                
+            }
     }
 
     /**
@@ -46,21 +47,6 @@ public abstract class CarreauPropriete extends Carreau {
         this.prixAchat = prixAchat;
     }
 
-    
-    /**
-     * @param nom the nom to set
-     */
-
-    /**
-     * @return the loyer
-     */
-    /**
-     * @param prix the prix to set
-     */
-
-    /**
-     * @return the proprietaire
-     */
     public Joueur getProprietaire() {
         return proprietaire;
     }
@@ -72,5 +58,13 @@ public abstract class CarreauPropriete extends Carreau {
         this.proprietaire = proprietaire;
     }
     
+    
     public abstract void calculLoyer();
+    
+    
+  
+    
+    
+    
 }
+

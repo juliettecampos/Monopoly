@@ -48,7 +48,7 @@ public class Interface {
                     System.out.println("Position : " + j.getPositionCourante().getNumero() + " " + j.getPositionCourante().getNomCarreau());
                     System.out.println("Cash : " + j.getCash() + "$");
                     System.out.print("Compagnies : ");
-                    if (j.getCompagnies().size() == 0){
+                    if (j.getCompagnies().isEmpty()){
                         System.out.println("Auncune compagnies.");
                     }else{
                     for (Compagnie c : j.getCompagnies()){
@@ -64,7 +64,7 @@ public class Interface {
                     }
                     }
                     System.out.print("Proprietes : ");
-                    if (j.getProprietesAConstruire().size() == 0){
+                    if (j.getProprietesAConstruire().isEmpty()){
                         System.out.println("Auncune propriete.");
                     }else{
                         for (ProprieteAConstruire p : j.getProprietesAConstruire()){
@@ -79,7 +79,7 @@ public class Interface {
 		System.out.println("Propriétaire : " + _nomp);
                 System.out.println("Loyer : " + _loyer);
                 System.out.println("Argent restant : " + _cashRestant);
-                System.out.println();
+               
 	}
 
     /**
