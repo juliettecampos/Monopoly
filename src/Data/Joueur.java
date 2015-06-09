@@ -4,19 +4,36 @@ import java.util.ArrayList;
 public class Joueur {
 	private String nomJoueur;
 	private int cash = 1500;
-	private Monopoly monopoly;
+	private Monopoly monopoly ;
 	private ArrayList<Compagnie> compagnies = new ArrayList<Compagnie>();
 	private ArrayList<Gare> gares = new ArrayList<Gare>();
 	private Carreau positionCourante;
 	private ArrayList<ProprieteAConstruire> proprietesAConstruire = new ArrayList<ProprieteAConstruire>();
         private int LancerDepart;
 
-    public Joueur(String str, int i) {
-        setNom(str);
-        LancerDepart=i;
-        positionCourante.setNumero(1);
-    }
+        public Joueur(String str) {
+            setNom(str);
+            monopoly = new Monopoly("src/Data/data.txt");
+        }
 
+        public void setPositionDepart() {
+            for (Carreau c : this.getMonopoly().getCarreaux()){
+                if (c.getNumero() == 1) {
+                    positionCourante = c;
+                }
+            }
+        }
+
+        public String getNomJoueur() {
+            return nomJoueur;
+        }
+
+        public Monopoly getMonopoly() {
+            return monopoly;
+        }
+        
+        
+        
 	public void setPositionCourante(int _val) {
             int num;
             if ((num = positionCourante.getNumero() + _val) > 40){
