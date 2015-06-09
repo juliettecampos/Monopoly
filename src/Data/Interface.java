@@ -79,6 +79,7 @@ public class Interface {
 		System.out.println("Propriétaire : " + _nomp);
                 System.out.println("Loyer : " + _loyer);
                 System.out.println("Argent restant : " + _cashRestant);
+                System.out.println();
 	}
 
     /**
@@ -99,17 +100,35 @@ public class Interface {
         for (Joueur j : m.getJoueurs()){
             System.out.println(j.getNom());
         }
+        System.out.println();
     }
     
     public void afficherPlateau(Monopoly m){
         for (Carreau c : m.getCarreaux()){
             System.out.println("Carreau " + c.getNumero() + " : " + c.getNomCarreau());
         }
+        System.out.println();
     }
     
     public void afficherPremierJoueur(Joueur j){
         System.out.println(j.getNom() + " commence à jouer.");
         System.out.println();
+    }
+    
+    public void rejouer(Joueur j){
+        System.out.println(j.getNom() + " a fait un double et rejoue.");
+        System.out.println();
+    }
+    
+    public void allerEnPrisonDouble(Joueur j){
+        System.out.println(j.getNom() + " a fait 3 doubles et va en prison.");
+        System.out.println();
+    }
+    
+    public void attendreClic(){
+        System.out.println("Appuyez sur ENTREE");
+        Scanner sc = new Scanner(System.in);
+        String entree = sc.nextLine();
     }
     
 }

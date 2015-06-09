@@ -16,12 +16,14 @@ public class Main {
         
         m.getInterface_3().afficherPlateau(m);
         
-        m.initialisePartie();        
+        m.initialisePartie();   
+        
+        m.getInterface_3().attendreClic();
         
         for (int i = 0; i < m.getJoueurs().size(); i++){
-            
             m.jouerUnCoup(m.getJoueurCourant());
             m.setJoueurCourant(m.joueurSuivant());
+            m.getInterface_3().attendreClic();
         }
         
         

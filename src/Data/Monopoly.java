@@ -151,23 +151,28 @@ public class Monopoly {
        
         
         public void jouerUnCoup(Joueur j) {
-            int i = 0;
-            while (lancerDesEtAvancer() && i<3){                        //tant que le joueur fait des doubles et qu il en a fait moins de 3 il rejoue.
-                lancerDesEtAvancer();
-                i ++;
+            int i = 1;
+            if (lancerDesEtAvancer()) {
+                while (i <= 2){         //tant que le joueur fait des doubles et qu il en a fait moins de 3 il rejoue.
+                    this.getInterface_3().attendreClic();
+                    this.getInterface_3().rejouer(j);                  
+                    i ++;
+                    lancerDesEtAvancer();                    
+                }
             }
             if (i == 3) {
-                this.getJoueurCourant().setPositionCourante(11);        //au bout de 3 double le joueur courant va en prison (case 11).
+                this.getInterface_3().allerEnPrisonDouble(j);
+                j.allerEnPrison();        //au bout de 3 double le joueur courant va en prison (case 11).
             }
         }
         
          public boolean lancerDesEtAvancer(){                           
-            int val1 = lancerDes();
-            int val2 = lancerDes();            
+            int val1 = 1;//lancerDes();
+            int val2 = 1;//lancerDes();            
             
             int val = val1 + val2;
             
-            for (Joueur j : joueurs){                                   //si le joueur est le joueur courant on met a jour sa position
+            for (Joueur j : joueurs){       //si le joueur est le joueur courant on met a jour sa position
                 if (j == joueurCourant){
                     j.setPositionCourante(val);
                 }               

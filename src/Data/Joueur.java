@@ -111,4 +111,16 @@ public class Joueur {
         public int getLancerDepart()    {
             return LancerDepart;
         }
+        
+        public void setPosition(int val){
+            for (Carreau c : this.getMonopoly().getCarreaux()){
+                if (c.getNumero() == val){
+                    positionCourante = c;
+                }
+            }
+        }
+        
+        public void allerEnPrison(){
+            this.setPosition(11);
+        }
 }
