@@ -24,11 +24,7 @@ public class Joueur {
                 }
             }
         }
-
-        public String getNomJoueur() {
-            return nomJoueur;
-        }
-
+       
         public Monopoly getMonopoly() {
             return monopoly;
         }
@@ -49,6 +45,9 @@ public class Joueur {
                 }
             }
 	}
+public int getNbCompagnies(){
+            return compagnies.size();
+        }
 
         public Carreau getPositionCourante() {
             return positionCourante;
@@ -102,8 +101,9 @@ public class Joueur {
 		throw new UnsupportedOperationException();
 	}
 
-	public int calculArgentRestant() {
-		throw new UnsupportedOperationException();
+	public int calculArgentRestant(int montant) {
+		this.setCash(cash+montant);
+                return this.cash;
 	}
 
         public void setNom(String str) {

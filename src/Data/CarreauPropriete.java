@@ -59,7 +59,7 @@ public abstract class CarreauPropriete extends Carreau {
     }
     
     
-    public abstract void calculLoyer();
+    public abstract int calculLoyer();
     
     
   

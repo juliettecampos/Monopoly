@@ -62,10 +62,16 @@ public class Monopoly {
 		throw new UnsupportedOperationException();
 	}
 
-	public void communiqueInfo(Joueur _jProprio, int _loyer) {
+	
+       
+        public void communiqueInfo(Joueur joueurP, int _loyer,Joueur joueurC) {
+            int cashP;
+            int cashC;
             
-            System.out.println("Propriétaire : "+_jProprio);
-            System.out.println("Valeur loyer: "+ _loyer );
+            cashP=joueurP.calculArgentRestant(_loyer);
+            cashC=joueurC.calculArgentRestant(-(_loyer));
+                        
+            getInterface_3().messageInfo(joueurP,_loyer,cashP,cashC);
            
 	}
         
@@ -179,6 +185,8 @@ public class Monopoly {
             int val2 = 3;//lancerDes();            
             
             int val = val1 + val2;
+            System.out.println("Valeur dès : "+ val );
+            this.setValeurDes(val);
             
             for (Joueur j : joueurs){       //si le joueur est le joueur courant on met a jour sa position
                 if (j == joueurCourant){
@@ -203,7 +211,20 @@ public class Monopoly {
         public void ajouterJoueur(Joueur j){
             joueurs.add(j);
         }
-        
+         public void setValeurDes(int valeurDes) {
+        this.valeurDes = valeurDes;
+    }
+         
+         
+         
+         
+    public int getValeurDes() {
+        return valeurDes;
+    }
+     
+                      
+         
+         
         public void initialisePartie(){
             
             

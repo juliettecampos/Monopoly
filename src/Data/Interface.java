@@ -75,11 +75,11 @@ public class Interface {
                 }
 	}
 
-	public void messageInfo(String _nomp, int _loyer, int _cashRestant) {
-		System.out.println("Propriétaire : " + _nomp);
+	public void messageInfo(Joueur joueurP, int _loyer, int _cashRestantP, int _cashRestantC) {
+		System.out.println("Propriétaire : " + joueurP.getNom());
                 System.out.println("Loyer : " + _loyer);
-                System.out.println("Argent restant : " + _cashRestant);
-               
+                System.out.println("Argent restant propriétaire : " + _cashRestantP);
+                System.out.println("Argent restant joueur courant : " + _cashRestantC);
 	}
 
     /**

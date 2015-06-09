@@ -5,17 +5,36 @@ public class Compagnie extends CarreauPropriete {
         super(numero, nomCarreau, monopoly ,_prixAchat);
     }
 
+       @Override
+       public int calculLoyer(){
+           int nbc;
+           int valDes;
+           nbc=this.getProprietaire().getNbCompagnies();
+           valDes=this.getMonopoly().getValeurDes();
+           
+           loyer=calcuLoyerCompagnie(nbc,valDes);
+           this.getMonopoly().communiqueInfo(this.getProprietaire(),loyer,this.getMonopoly().getJoueurCourant());
+           
+           return loyer;
+    }
+  public int calcuLoyerCompagnie(int nbC,int valDes){
+          if(nbC==1){
+              return 4*valDes;
+          }
+          if(nbC==2){
+              return 10*valDes;
+          }
+          return 0;
+      } 
+
     @Override
-    public void calculLoyer() {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
-
-    
-      public int calculLoyerCompagnie() {
-            throw new UnsupportedOperationException();
-    }
-
-    
+       public Joueur getProprietaire() {
+       return super.getProprietaire();
+       }   
+      
+       
+       
+       
     @Override
     public void action(Joueur j) {
         this.getMonopoly().setJoueurCourant(j);                //erreur quand on tombe sur une gare
@@ -24,7 +43,7 @@ public class Compagnie extends CarreauPropriete {
             this.achatPropriete();
         }
         else{
-            this.calculLoyerCompagnie();
+            this.calculLoyer();
         }
     }  
     

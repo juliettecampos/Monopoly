@@ -17,12 +17,19 @@ public class Gare extends CarreauPropriete {
 
         
     @Override
-    public void calculLoyer() {
-            throw new UnsupportedOperationException();
+    public int calculLoyer(){
+            int nbG;
+            nbG=this.getProprietaire().getNombreGare();
+            
+            loyer=calculLoyerGare(nbG);
+            
+            this.getMonopoly().communiqueInfo(this.getProprietaire(),loyer,this.getMonopoly().getJoueurCourant());
+            
+            return loyer;
     }
-
-    public int calculLoyerGare() {
-            throw new UnsupportedOperationException();
+        
+    public int calculLoyerGare(int nbG){
+           return nbG*25;
     }
 
     @Override
@@ -34,7 +41,7 @@ public class Gare extends CarreauPropriete {
             this.achatPropriete();
         }
         else{
-            this.calculLoyerGare();
+            this.calculLoyer();
         }
     }
     

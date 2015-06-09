@@ -71,7 +71,18 @@ public  class ProprieteAConstruire extends CarreauPropriete {
 
     
     public int calculLoyerPropriete() {
-            throw new UnsupportedOperationException();
+        int nbH;
+        int nbM;
+        nbH=this.getNbHotels();
+        nbM=this.getNbMaisons();
+        
+        if(nbH==1){
+            return this.loyerMaison.get(5);
+        }
+        if(nbM<=4){
+            return this.loyerMaison.get(nbM);
+        }
+        return 0;
     }
 
     
@@ -88,8 +99,14 @@ public  class ProprieteAConstruire extends CarreauPropriete {
     } 
 
     @Override
-    public void calculLoyer() {
-        throw new UnsupportedOperationException("Not supported yet."); 
+    public int calculLoyer() {       
+        loyer=calculLoyerPropriete();              
+        
+        this.getMonopoly().communiqueInfo(this.getProprietaire(),loyer,this.getMonopoly().getJoueurCourant());
+        
+        return loyer;
+        
+        
     }
     
     
