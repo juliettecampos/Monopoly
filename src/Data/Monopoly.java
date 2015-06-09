@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import static javax.swing.UIManager.get;
 import java.util.Random;
+import static javax.swing.UIManager.get;
 
 public class Monopoly {
 	
@@ -164,11 +164,15 @@ public class Monopoly {
                 this.getInterface_3().allerEnPrisonDouble(j);
                 j.allerEnPrison();        //au bout de 3 double le joueur courant va en prison (case 11).
             }
+            System.out.println();
+            //j.getPositionCourante().action(j);
+            
+            
         }
         
          public boolean lancerDesEtAvancer(){                           
-            int val1 = 1;//lancerDes();
-            int val2 = 1;//lancerDes();            
+            int val1 = 2;//lancerDes();
+            int val2 = 3;//lancerDes();            
             
             int val = val1 + val2;
             
@@ -236,12 +240,18 @@ public class Monopoly {
         }
         
         public Joueur joueurSuivant(){
-                if (this.getJoueurs().indexOf(this.getJoueurCourant()) == this.getJoueurs().size()-1){
-                    return this.getJoueurs().get(0);
-                }else {
-                    return this.getJoueurs().get(this.getJoueurs().indexOf(this.getJoueurCourant()) + 1);
-                }
+            if (this.getJoueurs().indexOf(this.getJoueurCourant()) == this.getJoueurs().size()-1){
+                return this.getJoueurs().get(0);
+            }else {
+                return this.getJoueurs().get(this.getJoueurs().indexOf(this.getJoueurCourant()) + 1);
             }
+        }
+        
+        public void failliteJoueur(Joueur j){
+            if (j.getCash() <= 0){
+                this.getJoueurs().remove(j);
+            }
+        }
         
         
 }

@@ -45,7 +45,7 @@ public class Interface {
 	public void messageEtatJoueur() {
 		for (Joueur j : monopoly.getJoueurs()){
                     System.out.println(j.getNom());
-                    System.out.println("Position : " + j.getPositionCourante().getNomCarreau());
+                    System.out.println("Position : " + j.getPositionCourante().getNumero() + " " + j.getPositionCourante().getNomCarreau());
                     System.out.println("Cash : " + j.getCash() + "$");
                     System.out.print("Compagnies : ");
                     if (j.getCompagnies().size() == 0){
@@ -131,4 +131,12 @@ public class Interface {
         String entree = sc.nextLine();
     }
     
+    public boolean infoGare(String nomp, int prix){
+        System.out.println("Voulez-vous acheter " + nomp + " qui coûte " + prix + "€ ?");
+        Scanner sc = new Scanner(System.in);
+        String reponse = sc.nextLine();
+        if (reponse == "oui" || reponse == "Oui"){
+            return true;
+        } else return false;
+    }
 }

@@ -10,9 +10,13 @@ public abstract class CarreauPropriete extends Carreau {
         this.setPrixAchat(_prixAchat);        
     }
 
-	public void achatPropriete() {
-		throw new UnsupportedOperationException();
-	}
+    public void achatPropriete() {
+//        this.getMonopoly().getJoueurCourant().getCash();
+            this.getMonopoly().getJoueurCourant().getCash();
+//            if (cash > this.getPrixAchat()){
+//                this.getMonopoly().getInterface_3().infoGare(this.getNomCarreau(), this.getPrixAchat());
+//            }
+    }
 
     /**
      * @return the loyerBase
@@ -42,6 +46,7 @@ public abstract class CarreauPropriete extends Carreau {
         this.prixAchat = prixAchat;
     }
 
+    
     /**
      * @param nom the nom to set
      */
@@ -66,4 +71,6 @@ public abstract class CarreauPropriete extends Carreau {
     public void setProprietaire(Joueur proprietaire) {
         this.proprietaire = proprietaire;
     }
+    
+    public abstract void calculLoyer();
 }

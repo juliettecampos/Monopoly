@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Joueur {
 	private String nomJoueur;
-	private int cash = 1500;
+	private int cash;
 	private Monopoly monopoly ;
 	private ArrayList<Compagnie> compagnies = new ArrayList<Compagnie>();
 	private ArrayList<Gare> gares = new ArrayList<Gare>();
@@ -14,6 +14,7 @@ public class Joueur {
         public Joueur(String str) {
             setNom(str);
             monopoly = new Monopoly("src/Data/data.txt");
+            this.setCash(1500);
         }
 
         public void setPositionDepart() {
@@ -93,8 +94,8 @@ public class Joueur {
 	
 	}
 
-	public void setCash() {
-		throw new UnsupportedOperationException();
+	public void setCash(int _cash) {
+		this.cash = _cash;
 	}
 
 	public void ajouterPropriete() {

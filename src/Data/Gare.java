@@ -16,24 +16,22 @@ public class Gare extends CarreauPropriete {
     }
 
         
-	public void calculLoyer() {
-		throw new UnsupportedOperationException();
-	}
+    @Override
+    public void calculLoyer() {
+            throw new UnsupportedOperationException();
+    }
 
-	public int calculLoyerGare() {
-		throw new UnsupportedOperationException();
-	}
+    public int calculLoyerGare() {
+            throw new UnsupportedOperationException();
+    }
 
-	public void achatPropriete() {
-		throw new UnsupportedOperationException();
-	}
-
-	public int getPrix() {
-	 
-               throw new UnsupportedOperationException();         
-	}
-
-	public String getNom() {
-		return nomCarreau;
-	}
+    @Override
+    public void action(Joueur j){
+        Joueur jProprio = this.getProprietaire();
+        if (jProprio == null){
+            this.achatPropriete();
+        }
+    }
+    
+    
 }
